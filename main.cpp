@@ -31,6 +31,7 @@ int find_book(int isbn);
 void add_book();
 void edit_book();
 void view_books();
+void delete_book();
 
 int main() {
     // Initialization
@@ -83,6 +84,10 @@ int main() {
                         display_sorted();
                         break;
                     }
+                    case 6:{
+                        delete_book();
+                        break;
+                    }
                     case 5: {
                         int roll;
                         cout << "Enter student roll number: ";
@@ -132,7 +137,29 @@ int main() {
 }
 return 0;
 }
+void delete_book() {
+    int isbn;
+    cout << "Enter book ISBN to delete: ";
+    cin >> isbn;
+    int index = find_book(isbn);
 
+    if (index == -1) {
+        cout << "Book not found.\n";
+        return;
+    }
+
+    // Shift all subsequent books left by one position
+    for (int i = index; i < book_count - 1; i++) {
+        book_isbn[i] = book_isbn[i + 1];
+        book_available[i] = book_available[i + 1];
+        // Note: You'll need to use strcpy or similar for char arrays
+        strncpy(book_title[i], book_title[i+1], MAX_NAME_LENGTH);
+        strncpy(book_author[i], book_author[i+1], MAX_NAME_LENGTH);
+    }
+
+    book_count--;
+    cout << "Book deleted successfully.\n";
+}
 void create_account() {
 if (student_count >= MAX_STUDENTS) {
 cout << "Student limit reached. Cannot create more accounts.\n";
