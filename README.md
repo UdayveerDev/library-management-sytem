@@ -21,10 +21,13 @@ User Authentication: The system provides a login option for both admins and stud
   3. Deposit amount: Students can deposit money into their accounts.
   4. Issue a book: Students can issue books from the list of available books.
 
+
 Account management: The system supports up to 20 students, who pay $20 for account opening and $30 as a security deposit. Students can issue any book for $2 for a 10-day period. Fines are imposed for late returns as per the specified rules.
 
 
+
 Data storage: The system uses 2D arrays to store the details of students and books. Initially, 15 books are stored in the library. Each student account contains the roll number, balance, and first name.
+
 
 # Implementation Details:
 The application is implemented in C++ without using classes, pointers, or structures. It employs 2D arrays, functions, loops, if-else, and switch operators to achieve the desired functionality. The main() function handles user inputs, presents options to the user, and calls appropriate functions based on the selected options. The program runs in a loop until the user decides to exit.
