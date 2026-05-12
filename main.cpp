@@ -3,7 +3,7 @@
 #include <iomanip>
 
 using namespace std;
-// Constants
+// Constants of the program 
 const int MAX_STUDENTS = 20;
 const int MAX_BOOKS = 15;
 const int MAX_NAME_LENGTH = 50;
