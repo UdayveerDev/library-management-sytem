@@ -32,7 +32,7 @@ void edit_book();
 void view_books();
 void delete_book();
 
-int main() {
+int main(){
     // Initialization
     // Add initial 15 books to the library
     // TODO: Replace with actual book data
@@ -47,7 +47,7 @@ int main() {
     int option;
     bool is_admin;
     string password;
-
+// condition 
     while (true) {
         cout << "Login as:\n1. Admin\n2. Student\n0. Exit\n";
         cin >> option;
@@ -155,7 +155,7 @@ void delete_book() {
         strncpy(book_title[i], book_title[i+1], MAX_NAME_LENGTH);
         strncpy(book_author[i], book_author[i+1], MAX_NAME_LENGTH);
     }
-
+// for deleting book
     book_count--;
     cout << "Book deleted successfully.\n";
 }
